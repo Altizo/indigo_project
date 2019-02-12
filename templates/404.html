@@ -1,0 +1,126 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" />
+    <title>INDIGO - 404</title>
+    <style>
+        @font-face {
+            font-family: "CenturyGothic";
+            src: url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.eot' %}");
+            src: url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.eot?#iefix' %}")format("embedded-opentype"),
+            url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.woff' %}") format("woff"),
+            url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.ttf' %}") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: "CenturyGothic-Bold";
+            src: url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.eot' %}");
+            src: url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.eot?#iefix' %}")format("embedded-opentype"),
+            url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.woff' %}") format("woff"),
+            url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.ttf' %}") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+        }
+    </style>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="wrapperContent">
+            <h1>404 ОШИБКА - СТРАНИЦА НЕ НАЙДЕНА</h1>
+            <p>К сожелению мы не нашли страницу которую вы запросили...</p>
+        </div>
+        <div class="btnBlock">
+            <a class="" onclick="javascript:history.back(); return false;"><i class="fa fa-arrow-left"></i> Назад</a>
+            <a class="" href="{% url 'home' %}">Вернуться на главную <i class="fa fa-home"></i></a>
+        </div>
+    </div>
+    <div id="video-bg">
+        <video width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto" poster="{% static '/img/bck.jpg' %}">
+            <source src="{% static '/img/Confused_Travolta.webm' %}" type="video/webm"></source>
+        </video>
+    </div>
+    <style type="text/css">
+    .content {
+        position: absolute;
+        margin: auto;
+        top: 25%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-family: CenturyGothic-Bold;
+        color: #fff;
+        text-shadow: 1px 1px 2px black, 0 0 1em black;
+        text-align: center;
+        align-items: center;
+        z-index: 999;
+    }
+    #video-bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 1;
+        background: url(/img/bck.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+    }
+    #video-bg > video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+    }
+    @supports (object-fit: cover) {
+        #video-bg > video {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .btnBlock {
+        font-family: CenturyGothic-Bold;
+        z-index: 500;
+        padding-top: 40px;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    .btnBlock a{
+        color: #fff;
+        z-index: 500;
+        padding: 5px 15px 5px 15px;
+        font-size: 1.6vw;
+        margin: 0px 10px 0px 10px;
+        border: 2px solid #fff;
+        cursor: pointer;
+        text-decoration: none;
+        background-color: rgba(0,0,0, 0.2);
+    } .btnBlock a:visited{
+        color: #fff;
+    }
+    @media screen and (max-width: 580px) {
+        .btnBlock a {
+            font-size: 100%;
+            display:  list-item;
+            list-style-type: none;
+            padding: 10px 5px 10px 5px;
+            margin-bottom: 10px;
+        }
+    }
+    </style>
+</body>
+</html>

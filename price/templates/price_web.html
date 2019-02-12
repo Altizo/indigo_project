@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Наши цены{% endblock title %}
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/price.css' %}" />
+{% endblock css_link %}
+
+
+{% block header_title %}Наши цены{% endblock header_title %}
+
+{% block content %}
+    <div class="wrapper">
+        <p>Мы можем предложить очень много вариантов брендирования, от оклейки автотранспорта до изготовления мелкой сувенирной продукции. Что бы более точно ответить Вам по поводу стоимости услуг, нужно уточнить определённый ряд параметров заказа.<br><br>При личном разговоре мы точно поймем, что Вам нужно и предоставим расценки на наши услуги.</p>
+    </div>
+    <div class='btnBlock' id="btnBlock">
+        <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>
+        <a href="{% url 'infoBrending' %}"><nobr>Узнать больше&nbsp;<i class="fas fa-info-circle"></i></nobr></a>
+        <a href="{% url 'contact' %}"><nobr>Связаться с нами&nbsp;<i class="fa fa-envelope"></i></nobr></a>
+    </div>
+    <style>
+        .wrapper {
+            width: 90%;
+        }
+        .wrapper p {
+            text-align: center;
+        }
+    </style>
+{% endblock content %}

@@ -1,0 +1,37 @@
+.infoText {
+	width: 65%;
+	min-height: 60%;
+	text-align: justify;
+	z-index: 500;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+/*-------------------------------------------------------------*/
+/* ----------------- Пошел блок адаптивности ------------------*/
+/*-------------------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+	.infoText {
+		width: 100%;
+	}
+	.themeImg, .wrapper, .themeImg2 {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.Title {
+		width: 100%;
+		font-size: 15px;
+	} .Logo {
+		display: none;
+	}
+	.btnBlock a {
+		font-size: 85%;
+		display:  list-item;
+		list-style-type: none;
+		padding: 10px 5px 10px 5px;
+		margin-bottom: 10px;
+	}
+}

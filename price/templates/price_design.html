@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Наши цены{% endblock title %}
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/price.css' %}" />
+{% endblock css_link %}
+
+
+{% block header_title %}Наши цены{% endblock header_title %}
+
+{% block content %}
+<div class="wrapper">
+    <p>Расценки и сроки на услуги могут вас приятно удивить...<br>Мы можем просчитать индивидуально каждый заказ с нюансами его специфики.</p>
+    <h2>Дизайн</h2>
+    <table>
+        <thead>
+            <tr>
+                <td class="title">Наименование</td>
+                <td>Цена</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for position in price_Design %}
+                <tr>
+                    <td class='nameString'>{{ position.name }}</td>
+                    <td>от {{ position.cost }} <i class="fas fa-ruble-sign"></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class='btnBlock' id="btnBlock">
+        <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>
+        <a href="{% url 'contact' %}"><nobr>Связаться с нами&nbsp;<i class="fa fa-envelope"></i></nobr></a>
+    </div>
+</div>
+<style type="text/css">
+    .wrapper {
+        width: 100%;
+    }
+    h2{
+        text-transform: uppercase;
+        margin: auto;
+        text-align: center;
+    }
+    table {
+        padding-bottom: 30px;
+        font-size: 100%;
+        min-width: 300px;
+        max-width: 900px;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        overflow: hidden;
+    } @media screen and (max-width: 580px) {table {	font-size: 85%;	}}
+
+    thead, .insidetable {
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+        border: 1px solid #DCDCDC;
+    }
+
+    th {
+        font-weight: 600;
+        color: #00AEEF;
+        padding: 10px 5px 5px 5px;
+        text-transform: uppercase;
+    }
+
+    .title {
+        font-size: 100%;
+        vertical-align: middle;
+    } .title:hover{
+        background-color: transparent;
+    }
+
+    td {
+        border: 1px solid #DCDCDC;
+        padding: 5px 5px 5px 5px;
+    } .nameString {
+        text-align: left;
+    }
+
+
+    tr, td  {
+        background-color: transparent;
+        -webkit-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+
+    tbody tr:hover {
+        background: #333;
+        color: #fff;
+        -webkit-transition-duration: 0.01s;
+        -o-transition-duration: 0.01s;
+        -moz-transition-duration: 0.01s;
+        transition-duration: 0.01s;
+    }
+
+    tbody td:hover {
+        background: #00AEEE;
+        color: #fff;
+        -webkit-transition-duration: 0.01s;
+        -o-transition-duration: 0.01s;
+        -moz-transition-duration: 0.01s;
+        transition-duration: 0.01s;
+    }
+    p {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 25px;
+    }
+</style>
+{% endblock content %}

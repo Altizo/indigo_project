@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    {% include "seo.html" %}
+    <title>Рекламное агентство INDIGO</title>
+    <meta name="description" content="Рекламное агентство INDIGO. Мы занимаемся: поллиграфией, наружной рекламой, сувенирной продукцией, а также разработкой веб сайтов. Хотите качественно и быстро? — жмите!"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link type="text/css" rel="stylesheet" href="{% static '/css/parallax.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static '/css/sample.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" />
+    <style>
+        @font-face {
+            font-family: "CenturyGothic";
+            src: url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.eot' %}");
+            src: url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.eot?#iefix' %}")format("embedded-opentype"),
+            url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.woff' %}") format("woff"),
+            url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.ttf' %}") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: "CenturyGothic-Bold";
+            src: url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.eot' %}");
+            src: url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.eot?#iefix' %}")format("embedded-opentype"),
+            url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.woff' %}") format("woff"),
+            url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.ttf' %}") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+        }
+    </style>
+    <link rel="shortcut icon" href="{% static '/img/favicon.png' %}" type="image/png">
+</head>
+<body class='unloaded'>
+    <img class="loadBackground" src="{% static '/img/bck.png' %}" alt="Background" />
+    <div class='preloaderCont'>
+        <span class='ending'><img src="{% static '/img/classic.svg' %}" alt="loadimg" /></span><span class='starting'><img src="{% static '/img/preload.svg' %}" alt="loadimg" /></span>
+    </div>
+    <div id="parallax" class="Parallax">
+        <img data-speed="0.1" class="parallaxBackground" alt="Background" src="{% static 'img/bck.png' %}">
+        <div id="intro">
+            <div class='fullScreen Logo'>
+                <h1><img src="{% static 'img/classic.svg' %}" alt="Рекламное агентство INDIGO"/></h1>
+            </div>
+            <div class ='forLandscapeMobile' data-speed="1.2">
+                <ul>
+                    <li class='itemLandMenuService' onclick='toggleSubMobileMenu("landscape")'><a href='#'>Услуги</a></li>
+                        <ul onclick='toggleSubMobileMenu("landscape")'>
+                            <li class='itemLandSubMenu'><a href='#press'>Все виды печати</a></li>
+                            <li class='itemLandSubMenu'><a href='#brending'>Брендинг</a></li>
+                            <li class='itemLandSubMenu'><a href='#razmeshenie'>Размещение<br>рекламы</a></li>
+                            <li class='itemLandSubMenu'><a href='#web'>WEB разработка</a></li>
+                            <li class='itemLandSubMenu'><a href='#design'>Дизайн</a></li>
+                        </ul>
+                    <li class='itemLandMenu'><a href="{% url 'about' %}">Немного&nbsp;о&nbsp;нас</a></li>
+                    <li class='itemLandMenu'><a href="{% url 'portfolio' %}">Портфолио</a></li>
+                    <li class='itemLandMenu'><a href="{% url 'price_All' %}">Наши цены</a></li>
+                    <li class='itemLandMenu'><a href="{% url 'contact' %}">Почта</a></li>
+                </ul>
+            </div>
+            <div class="fullScreen wrapperPortraitMobile">
+                <div class ='fullScreen forPortraitMobile' data-speed="1.2">
+                    <ul>
+                        <li class='itemPortMenuService' onclick='toggleSubMobileMenu("portrait")'><a href='#'>Услуги</a></li>
+                            <ul onclick='toggleSubMobileMenu("portrait")'>
+                                <li class='itemPortSubMenu'><a href='#press'>Все виды печати</a></li>
+                                <li class='itemPortSubMenu'><a href='#brending'>Брендинг</a></li>
+                                <li class='itemPortSubMenu'><a href='#razmeshenie'>Размещение<br>рекламы</a></li>
+                                <li class='itemPortSubMenu'><a href='#web'>WEB разработка</a></li>
+                                <li class='itemPortSubMenu'><a href='#design'>Дизайн</a></li>
+                            </ul>
+                        <li class='itemPortMenu'><a href="{% url 'about' %}">О нас</a></li>
+                        <li class='itemPortMenu'><a href="{% url 'portfolio' %}">Портфолио</a></li>
+                        <li class='itemPortMenu'><a href="{% url 'price_All' %}">Наши цены</a></li>
+                        <li class='itemPortMenu'><a href="{% url 'contact' %}">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class='introContact' data-speed="1.5">
+                <div class='wrapperIntroContact'>
+                    <div class="flex-item"><a href="tel:+79780200503">+7 978 02 00 503</a></div>
+                    <div class="flex-item"><a href="tel:+79780200530">+7 978 02 00 530</a></div>
+                </div>
+            </div>
+            <div class="wrapper" data-speed="2">
+                <div class='flex-container'>
+                    <div class='grid flex-item'>
+                        <figure class="effect-apollo">
+                    		<img src="{% static 'img/menu/press.png' %}" alt="img01"/>
+                    		<figcaption>
+                    			<h2>Все виды<br>печати</h2>
+                    			<p>Визитки, листовки,<br>баннера, плакаты...</p>
+                    			<a href="#press"></a>
+                    		</figcaption>
+                    	</figure>
+                    </div>
+                    <div class='grid flex-item'>
+                        <figure class="effect-apollo">
+                    		<img src="{% static 'img/menu/brand.png' %}" alt="img01"/>
+                    		<figcaption>
+                    			<h2>Брендинг</h2>
+                    			<p>Сувенирная продукция,<br>акцидентка,<br>оклейка авто...</p>
+                    			<a href="#brending"></a>
+                    		</figcaption>
+                    	</figure>
+                    </div>
+                    <div class='grid flex-item'>
+                        <figure class="effect-apollo">
+                    		<img src="{% static 'img/menu/razm.png' %}" alt="img01"/>
+                    		<figcaption>
+                    			<h2>Размещение<br>рекламы</h2>
+                    			<p>На радио,<br>в интернете,<br>на бигбордах...</p>
+                    			<a href="#razmeshenie"></a>
+                    		</figcaption>
+                    	</figure>
+                    </div>
+                    <div class='grid flex-item'>
+                        <figure class="effect-apollo">
+                    		<img src="{% static 'img/menu/web.png' %}" alt="img01"/>
+                    		<figcaption>
+                    			<h2>WEB разработка</h2>
+                    			<p>Создание сайтов<br>с нуля</p>
+                    			<a href="#web"></a>
+                    		</figcaption>
+                    	</figure>
+                    </div>
+                    <div class='grid flex-item'>
+                        <figure class="effect-apollo">
+                    		<img src="{% static 'img/menu/design.png' %}" alt="img01"/>
+                    		<figcaption>
+                    			<h2>Дизайн</h2>
+                    			<p>Фирменный стиль,<br>поллиграфия, интерьер,<br>web дизайн...</p>
+                    			<a href="#design"></a>
+                    		</figcaption>
+                    	</figure>
+                    </div>
+                </div>
+            </div>
+            <div class='footerWrapper'  data-speed="3">
+                <ul class="Footer-menu">
+                    <li>
+                        <a class="link-st" href="{% url 'about' %}">Немного&nbsp;о&nbsp;нас</a>
+                    </li>
+                    <li>
+                        <a class="link-st" href="{% url 'portfolio' %}">Портфолио</a>
+                    </li>
+                    <li class="price">
+                        <a class="link-st" href="{% url 'price_All' %}">Наши&nbsp;цены</a>
+                    </li>
+                    <li class="location last">
+                        <a class="link-st" href="{% url 'contact' %}">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="press">
+            <div class='topLeftCaption'>
+                <table class='headerBox'>
+                    <tr>
+                        <td class='slideHeader'>
+                            <a href="{% url 'infoPress' %}"><h2>Все виды печати</h2></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='moreInfo'>
+                            <a href="{% url 'infoPress' %}">Узнать больше   &nbsp;<i class="fas fa-info-circle"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='ourPrices'>
+                            <a href="{% url 'price_Press' %}">Наши цены   &nbsp;<i class="fas fa-ruble-sign"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class='fullScreen' data-speed="1.5">
+                <div class="pageCont">
+                    <img src="{% static 'img/press/pressMachine.png' %}" alt="pressMachine" style='left:10%; bottom: 10%; width:40%; max-width:700px; min-width: 300px'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2.5">
+                <div class="pageCont">
+                    <img src="{% static 'img/press/Businesscards.png' %}" alt="cards" style='left:40%; height: 100%; min-wdht: 100%; min-width: 300px'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="3.5">
+                <div class="pageCont">
+                    <img src="{% static 'img/press/Businesscards_back.png' %}" alt="cards" style=' left:50%; height: 100%; min-width: 300px'/>
+                </div>
+            </div>
+        </div>
+        <div id="brending">
+            <div class='bottomLeftCaption'>
+                <table class='headerBox'>
+                    <tr>
+                        <td class='slideHeader'>
+                            <a href="{% url 'infoBrending' %}"><h2>Брендирование</h2></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='moreInfo'>
+                            <a href="{% url 'infoBrending' %}">Узнать больше   &nbsp;<i class="fas fa-info-circle"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='ourPrices'>
+                            <a href="{% url 'price_brending' %}">Наши цены   &nbsp;<i class="fas fa-ruble-sign"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class='fullScreen' data-speed="1.2">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/brending/CoffeeCup.png' %}" alt="CoffeeCup" style=' left: 5%; top: 0px; width: 40%; min-width: 300px;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="1.2">
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/brending/CoffeeCup.png' %}" alt="CoffeeCup" style=' left: 10%; top: 0px; width: 70%; min-width: 300px; max-height: 500px;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2">
+                <div class="pageCont">
+                    <img src="{% static 'img/brending/Hatchback.png' %}" alt="car" style=' left:30%; bottom: 0px; width: 40%; min-width: 300px'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="3">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/brending/hoody.png' %}" alt="hoddie" style=' left:50%; height: 100%;  width: auto;'/>
+                </div>
+            </div>
+        </div>
+        <div id="razmeshenie">
+            <div class='topRightCaption'>
+                <table class='headerBox'>
+                    <tr>
+                        <td class='slideHeader'>
+                            <a href="{% url 'infoRazmeshenie' %}"><h2>Размещение<br>рекламы</h2></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='moreInfo'>
+                            <a href="{% url 'infoRazmeshenie' %}">Узнать больше   &nbsp;<i class="fas fa-info-circle"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='ourPrices'>
+                            <a href="{% url 'price_razm' %}">Наши цены   &nbsp;<i class="fas fa-ruble-sign"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class='fullScreen' data-speed="1.3">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/razmeshenie/airsheep.png' %}" alt="airsheep" style=' left: 5%; top: 5%; width: 50%; max-width: 700px; max-height: 40%;'/>
+                </div>
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/razmeshenie/airsheep.png' %}" alt="airsheep" style=' left: 35%; top: 45%; width: 50%; max-width: 350px; '/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="0.9">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/razmeshenie/billboard.png' %}" alt="billboard" style=' left:14%; bottom: 0px; width: 50%; min-width: 300px; max-width: 1000px; max-height:630px;'/>
+                </div>
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/razmeshenie/billboard.png' %}" alt="billboard" style=' left:5%; bottom: 0px; width: 50%; max-width: 750px; min-width: 300px; max-height:630px;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="1.1">
+                <div class="pageCont">
+                    <img src="{% static 'img/razmeshenie/board.png' %}" alt="board" style=' left:65%; bottom: 0px; width: 40%;'/>
+                </div>
+            </div>
+        </div>
+        <div id="web">
+            <div class='topLeftCaption'>
+                <table class='headerBox2 mobileHide'>
+                    <tr>
+                        <td colspan='2' class='slideHeader'>
+                            <a href="{% url 'infoWeb' %}"><h2>WEB - разработка</h2></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='moreInfo'>
+                            <a href="{% url 'infoWeb' %}">Узнать больше   &nbsp;<i class="fas fa-info-circle"></i></a>
+                        </td>
+                        <td class='brifing' align='right'>
+                            <a href="{% static 'files/Brif_site.pdf' %}">Скачать бриф  &nbsp;<i class="fas fa-file-code"></i></a>
+                        </td>
+                    </tr>
+                </table>
+                <table class='headerBox mobileVision'>
+                    <tr>
+                        <td class='slideHeader'>
+                            <a href="{% url 'infoWeb' %}"><h2>WEB - разработка</h2></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='moreInfo'>
+                            <a href="{% url 'infoWeb' %}">Узнать больше   &nbsp;<i class="fas fa-info-circle"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='brifing' align='left'>
+                            <a href="{% static 'files/Brif_site.pdf' %}">Скачать бриф  &nbsp;<i class="fas fa-file-code"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class='fullScreen' data-speed="1.5">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/web/code1.png' %}" alt="code" style='left: 10%; top: 35%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/web/code2.png' %}" alt="code" style='left: 10%; top: 35%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="3">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/web/code3.png' %}" alt="code" style='left: 10%; top: 35%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="1.5">
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/web/code1.png' %}" alt="code" style='left: 10%; top: 45%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2">
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/web/code2.png' %}" alt="code" style='left: 10%; top: 45%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="3">
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/web/code3.png' %}" alt="code" style='left: 10%; top: 45%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="1.7">
+                <div class="pageCont">
+                    <img src="{% static 'img/web/code4.png' %}" alt="code" style='right: 47%; bottom: 0%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2.3">
+                <div class="pageCont">
+                    <img src="{% static 'img/web/code5.png' %}" alt="code" style='right: 45%; bottom: 0%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2.7">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/web/code6.png' %}" alt="code" style='right: 35%; bottom: 0%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="3.2">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/web/code7.png' %}" alt="code" style='right: 20%; top: 0%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2.5">
+                <div class="pageCont">
+                    <img src="{% static 'img/web/code8.png' %}" alt="code" style='right: 14%; top: 0%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="3">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/web/code9.png' %}" alt="code" style='right: 12%; top: 0%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="4">
+                <div class="pageCont">
+                    <img src="{% static 'img/web/code10.png' %}" alt="code" style='right: 7%; top: 0%;'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2.1">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/web/code11.png' %}" alt="code" style='right: 0%; top: 0%; '/>
+                </div>
+            </div>
+        </div>
+        <div id="design">
+            <div class='topRightCaption'>
+                <table class='headerBox mobileVision'>
+                    <tr><td class='slideHeader'>
+                            <a href="{% url 'infoDesign' %}"><h2>Дизайн</h2></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='moreInfo'>
+                            <a href="{% url 'infoDesign' %}">Узнать больше   &nbsp;<i class="fas fa-info-circle"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='brifing'>
+                            <a href="{% static 'files/Brif_logo.pdf' %}">Скачать бриф  &nbsp;<i class="fas fa-file-image"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='ourPrices'>
+                            <a href="{% url 'price_Design' %}">Наши цены   &nbsp;<i class="fas fa-ruble-sign"></i></a>
+                        </td>
+                    </tr>
+                </table>
+                <table class='headerBox mobileHide'>
+                    <tr>
+                        <td colspan='3' class='slideHeader'>
+                            <a href="{% url 'infoDesign' %}"><h2>Разработка дизайна</h2></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align='left' class='moreInfo'>
+                            <a href="{% url 'infoDesign' %}">Узнать больше   &nbsp;<i class="fas fa-info-circle"></i></a>
+                        </td>
+                        <td align='center' class='ourPrices'>
+                            <a href="{% url 'price_Design' %}">Наши цены   &nbsp;<i class="fas fa-ruble-sign"></i></a>
+                        </td>
+                        <td class='brifing'>
+                            <a href="{% static 'files/Brif_logo.pdf' %}">Скачать бриф  &nbsp;<i class="fas fa-file-image"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class='fullScreen' data-speed="1.1">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/design/PS.png' %}" alt="ps" style='left: 5%; top: 24%; width: 45%; max-height: 50%'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="1.5">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/design/3D.png' %}" alt="3d" style='left: 22%; top: 31%; width: 45%; max-height: 50%'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/design/AI.png' %}" alt="ai" style='left: 38%; top: 38%; width: 45%; max-height: 50%'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2.5">
+                <div class="pageCont mobileHide">
+                    <img src="{% static 'img/design/CD.png' %}" alt="cd" style='left: 55%; top: 45%; width: 45%; max-height: 50%'/>
+                </div>
+            </div>
+
+            <div class='fullScreen' data-speed="1.3">
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/design/PS.png' %}" alt="ps" style='left: 2%; top: 30%; width: 55%; max-height: 65%'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="1.7">
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/design/3D.png' %}" alt="3d" style='left: 17%; top: 45%; width: 55%; max-height: 65%'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2.1">
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/design/AI.png' %}" alt="ai" style='left: 32%; top: 60%; width: 55%; max-height: 65%'/>
+                </div>
+            </div>
+            <div class='fullScreen' data-speed="2.5">
+                <div class="pageCont mobileVision">
+                    <img src="{% static 'img/design/CD.png' %}" alt="cd" style='left: 47%; top: 75%; width: 55%; max-height: 65%'/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-animation">
+        <img src="{% static '/img/nav/mouse.gif' %}" data-speed="scroll" alt="nav" />
+    </div>
+    <a class="right-arrow">
+        <img src="{% static '/img/nav/arrow_right.png' %}" data-speed="" alt="nav" />
+    </a>
+    <a class="left-arrow">
+        <img src="{% static '/img/nav/arrow_left.png' %}" data-speed="" alt="nav" />
+    </a>
+    {% include "layer_nav.html" %}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static '/js/modernizr.custom.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/parallax.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/snap.svg-min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/hovers.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/base.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/index.js' %}"></script>
+    <script type="text/javascript">
+        var save = 'notMove';
+        var width=document.body.clientWidth;
+        var height=document.body.clientHeight;
+            function toggleSubMobileMenu (mode){
+                switch (mode) {
+                    case 'landscape':
+                        if (save != 'move'){
+                            if (height<300) {
+                                $('.forLandscapeMobile').css('top','0px');
+                                save = 'move';
+                            } else {
+                                $('.forLandscapeMobile').css('top','20px');
+                                save = 'move';
+                            }
+                        } else {
+                            $('.forLandscapeMobile').css('top','60px');
+                            save = 'notMove';
+                        }
+                        $('.itemLandSubMenu').toggle('slow');
+                        $('.itemLandMenu').toggle('slow');
+                        break;
+                    case 'portrait':
+                        $('.itemPortSubMenu').toggle('slow');
+                        $('.itemPortMenu').toggle('slow');
+                        $('.introContact').toggle('slow');
+                        break;
+                }
+            }
+    </script>
+</body>
+</html>

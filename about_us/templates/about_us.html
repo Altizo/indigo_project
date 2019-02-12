@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Немного о нас{% endblock title %}
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
+{% endblock css_link %}
+
+
+{% block header_title %}Немного о нас{% endblock header_title %}
+
+{% block content %}
+<div class='infoText' id="infoText">
+    {{ about_us.text|safe }}
+    <!--
+    <h3>Нам доверяют:</h3>
+    <div class="owl-carousel">
+        <div><a href=""><img src="http://via.placeholder.com/140x100" /></a></div>
+        <div><a href=""><img src="http://via.placeholder.com/180x100" /></a></div>
+        <div><a href=""><img src="http://via.placeholder.com/120x100" /></a></div>
+        <div><a href=""><img src="http://via.placeholder.com/150x100" /></a></div>
+        <div><a href=""><img src="http://via.placeholder.com/120x100" /></a></div>
+        <div><a href=""><img src="http://via.placeholder.com/135x100" /></a></div>
+        <div><a href=""><img src="http://via.placeholder.com/170x100" /></a></div>
+        <div><a href=""><img src="http://via.placeholder.com/110x100" /></a></div>
+    </div> -->
+</div>
+<div class='themeImg' id="themeImg">
+    <img data-depth="0.9" class='css' src="{% static '/img/css.png' %}">
+    <img data-depth="0.7" class='java' src="{% static '/img/java.png' %}">
+    <img data-depth="1.0" class='dividers' src="{% static '/img/dividers.png' %}">
+    <img data-depth="0.8" class='php' src="{% static '/img/php.png' %}">
+    <img data-depth="0.6" class='t-shirt' src="{% static '/img/t-shirt.png' %}">
+    <img data-depth="0.3" class='sass' src="{% static '/img/sass.png' %}">
+    <img data-depth="0.5" class='pencil' src="{% static '/img/pencil.png' %}">
+    <img data-depth="1.3" class='python' src="{% static '/img/python.png' %}">
+    <img data-depth="0.8" class='printer' src="{% static '/img/printer.png' %}">
+    <img data-depth="0.3" class='pen' src="{% static '/img/pen.png' %}">
+    <img data-depth="0.5" class='html' src="{% static '/img/html.png' %}">
+    <img data-depth="0.4" class='less' src="{% static '/img/less.png' %}">
+    <img data-depth="0.7" class='billboard' src="{% static '/img/billboard.png' %}">
+    <img data-depth="0.3" class='rules' src="{% static '/img/rules.png' %}">
+</div>
+<div>
+    <img data-depth="1.0" class='themeImg2 costume' src="{% static '/img/costume.png' %}">
+</div>
+<div class='btnBlock' id="btnBlock">
+    <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>
+    <a href="{% url 'contact' %}"><nobr>Связаться с нами&nbsp;<i class="fa fa-envelope"></i></nobr></a>
+</div>
+<style type="text/css">
+    .content {
+        padding-top: 7%;
+    }
+    .infoText{
+        width: 57%;
+    }
+    .themeImg {
+        z-index: -1;
+        position: fixed;
+        left: 57%;
+        right: 0;
+        top: 10%;
+        bottom: 0;
+        width: 43%;
+    }
+    .bottom {
+        position: table;
+        vertical-align: bottom;
+        margin-bottom: -30%;
+    }
+    .themeImg img{
+
+    }
+    @media screen and (max-width: 1024px) {
+        .content {
+            padding-top: 10%;
+        }
+        .infoText {
+            width: 100%;
+        }
+
+        .themeImg {
+            display: none;
+        }
+    }
+    .costume{
+        z-index: -1;
+        position: fixed;
+        width: 31%;
+        right: 5%;
+        bottom: 0;
+    }
+    .themeImg .css{
+        z-index: -2;
+        position: absolute;
+        margin-top: 75%;
+        height: 6%;
+        bottom: 35%;
+        left: 10%;
+    }
+    .themeImg .java{
+        z-index: -2;
+        position: absolute;
+        margin-left: 52%;
+        height: 4%;
+        bottom: 83%;
+        right: 5%;
+    }
+    .themeImg .dividers{
+        z-index: -2;
+        position: absolute;
+        margin-top: 12%;
+        margin-left: 58%;
+        height: 11%;
+        bottom: 70%;
+        right: 29%;
+    }
+    .themeImg .php{
+        z-index: -2;
+        position: absolute;
+        margin-top: 18%;
+        margin-left: 85%;
+        height: 6%;
+        bottom: 70%;
+        right: 9%;
+    }
+    .themeImg .t-shirt{
+        z-index: -2;
+        position: absolute;
+        margin-top: 28%;
+        margin-left: 70%;
+        height: 18%;
+        bottom: 50%;
+        right: 9%;
+    }
+    .themeImg .sass{
+        z-index: -2;
+        position: absolute;
+        margin-top: 68%;
+        margin-left: 74%;
+        height: 11%;
+        bottom: 40%;
+        right: 4%;
+    }
+    .themeImg .pencil{
+        z-index: -2;
+        position: absolute;
+        margin-top: 90%;
+        margin-left: 80%;
+        height: 11%;
+        bottom: 25%;
+        right: 13%;
+    }
+    .themeImg .python{
+        z-index: -2;
+        position: absolute;
+        margin-top: 30%;
+        margin-left: 49%;
+        height: 8%;
+        bottom: 60%;
+        right: 28%;
+    }
+    .themeImg .printer{
+        z-index: -2;
+        position: absolute;
+        margin-top: 50%;
+        margin-left: 9%;
+        height: 18%;
+        bottom: 45%;
+        left: 7%;
+    }
+    .themeImg .pen{
+        z-index: -2;
+        position: absolute;
+        margin-top: 89%;
+        margin-left: 6%;
+        height: 11%;
+        bottom: 23%;
+        left: 2%;
+    }
+    .themeImg .html{
+        z-index: -2;
+        position: absolute;
+        margin-top: 28%;
+        margin-left: 11%;
+        height: 8%;
+        bottom: 65%;
+        left: 20%;
+    }
+    .themeImg .less{
+        z-index: -2;
+        position: absolute;
+        height: 11%;
+        bottom: 72%;
+        left: 2%;
+    }
+    .themeImg .billboard{
+        z-index: -2;
+        position: absolute;
+        margin-top: 8%;
+        margin-left: 20%;
+        height: 16%;
+        bottom: 70%;
+        left: 20%;
+    }
+    .themeImg .rules{
+        z-index: -2;
+        position: absolute;
+        margin-top: 25%;
+        margin-left: 32%;
+        height: 11%;
+        bottom: 53%;
+        left: 30%;
+    }
+</style>
+{% endblock content %}

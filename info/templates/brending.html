@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ textPacked.title }}{% endblock title %}
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
+{% endblock css_link %}
+
+
+{% block header_title %}{{ textPacked.title }}{% endblock header_title %}
+
+{% block content %}
+            <div class='infoText' id="infoText">
+                {{ textPacked.text|safe }}
+            </div>
+            <div class='themeImg' id="themeImg">
+                <img data-depth="0.9" src="{% static '/img/brending/m_hoody.png' %}">
+            </div>
+            <div class='btnBlock' id="btnBlock">
+                <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>
+                <a href="{% url 'price_brending' %}">Наши цены <i class="fas fa-ruble-sign"></i></a>
+            </div>
+            <style>
+            .themeImg {
+    			z-index: -100;
+    			position: fixed;
+    			left: auto;
+    			right: 0;
+    			top: 0;
+    			bottom: 0;
+    			width: 35%;
+    			height: 100%;
+    		}
+            .themeImg img{
+    			z-index: -100;
+    			position: absolute;
+    			align-items: center;
+    			bottom: 0;
+    			height: 100%;
+    		}
+            </style>
+{% endblock content %}

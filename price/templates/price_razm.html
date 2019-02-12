@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Наши цены{% endblock title %}
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/price.css' %}" />
+{% endblock css_link %}
+
+
+{% block header_title %}Цены за размещение рекламы{% endblock header_title %}
+
+{% block content %}
+    <div class="wrapper">
+        <p>Вариации размещения рекламы почти безграничны, поэтому составить стабильный прайс с ценами умещающий все и сразу довольно затруднительно. Если Вы хотите узнать стоимость размещения рекламы то свяжитесь с нами.<br><br>При личном разговоре мы точно определим что Вам нужно и предоставим расценки за наши услуги.</p>
+        <div class='btnBlock' id="btnBlock">
+            <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>
+            <a href="{% url 'infoBrending' %}"><nobr>Узнать больше&nbsp;<i class="fas fa-info-circle"></i></nobr></a>
+            <a href="{% url 'contact' %}"><nobr>Связаться с нами&nbsp;<i class="fa fa-envelope"></i></nobr></a>
+        </div>
+    </div>
+    <style>
+        .content {
+        	width: 100%;
+        	padding-top: 10%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+        .wrapper {
+            position: absolute;
+			top: 30%;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			text-align: center;
+			vertical-align: middle;
+			height: 60%;
+			width: 50%;
+        }
+        @media  screen and (max-width: 1024px) {
+			.wrapper {
+				top: 15%;
+				width: 80%;
+			}
+		}
+		@media  screen and (max-width: 580px) {
+			h1 {
+				padding-top: 25px;
+				width: 100%;
+			}
+			.wrapper {
+				text-align: justify;
+				top: 0;
+				width: 90%;
+			}
+		}
+		@media  screen and (max-width: 580px) and (min-height: 320px) {
+			.content {
+				top: 0;
+				width: 90%;
+			}
+		}
+    </style>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Письмо отправлено{% endblock title %}
+{% block css_link %}
+{% endblock css_link %}
+
+
+{% block header_title %}Письмо отправлено{% endblock header_title %}
+
+{% block content %}
+<p>мы свяжемся с Вами в ближайшее время, спасибо за то что выбрали INDIGO</p>
+<div class='btnBlock ' id="btnBlock">
+	<a href="{% url 'home' %}"><i class='fa fa-arrow-left'></i> Вернуться на главную</a>
+</div>
+<style type="text/css">
+	.content {
+		opacity: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	@media screen and (max-width: 580px) {
+		.Title {
+			width: 100%;
+			font-size: 15px;
+		} .Logo {
+			display: none;
+		}
+		.btnBlock a {
+			font-size: 85%;
+			display:  list-item;
+			list-style-type: none;
+			padding: 10px 5px 10px 5px;
+			margin-bottom: 10px;
+		}
+	}
+</style>
+{% endblock content %}

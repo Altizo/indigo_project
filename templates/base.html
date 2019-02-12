@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	{% include "seo.html" %}
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{% block title %}Заголовок{% endblock title %}</title>
+	<link type="text/css" rel="stylesheet" href="{% static '/css/base.css' %}" />
+	{% block css_link %}{% endblock css_link %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	{% block js_link %}{% endblock js_link %}
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<style>
+        @font-face {
+            font-family: "CenturyGothic";
+            src: url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.eot' %}");
+            src: url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.eot?#iefix' %}")format("embedded-opentype"),
+            url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.woff' %}")format("woff"),
+            url("{% static '/fonts/Century Gothic - Regular/CenturyGothic.ttf' %}")format("truetype");
+            font-style: normal;
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: "CenturyGothic-Bold";
+            src: url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.eot' %}");
+            src: url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.eot?#iefix' %}")format("embedded-opentype"),
+            url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.woff' %}") format("woff"),
+            url("{% static '/fonts/Century Gothic - Bold/CenturyGothic-Bold.ttf' %}") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+        }
+		body {
+			background: url({% static '/img/bck.png' %} ) center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+		}
+    </style>
+	<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" />
+</head>
+<body>
+	<div class='header' id='header'>
+		<a href="{% url 'home' %}" class='Logo'>
+            <img src="{% static '/img/logo.svg' %}">
+		</a>
+		<div class='Title'>
+			<h1>{% block header_title %}Базовый заголовок{% endblock header_title %}</h1>
+		</div>
+	</div>
+	<div class='content' id='content'>
+		{% block content %}Базовый контент{% endblock content %}
+	</div>
+	{% include 'layer_nav.html' %}
+	<script type="text/javascript">
+		setTimeout(function () {document.getElementById("header").style.opacity = 1;}, 500);
+		setTimeout(function () {document.getElementById("content").style.opacity = 1;}, 900);
+		setTimeout(function () {document.getElementById("trigger-overlay").style.opacity = 1;}, 1500);
+	</script>
+    <script type="text/javascript" src="{% static '/js/parallax.min.js' %}"></script>
+    <script>
+        var scene = document.getElementById('themeImg');
+        var parallaxInstance = new Parallax(scene,{
+            limitY: 0.1
+        });
+    </script>
+</body>
+</html>

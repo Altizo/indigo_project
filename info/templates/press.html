@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ textPacked.title }}{% endblock title %}
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
+{% endblock css_link %}
+
+
+{% block header_title %}{{ textPacked.title }}{% endblock header_title %}
+
+{% block content %}
+            <div class='infoText' id="infoText">
+                {{ textPacked.text|safe }}
+            </div>
+            <div class='themeImg' id="themeImg">
+                <img  data-depth="0.9" src="{% static '/img/press/magazine.png' %}">
+            </div>
+            <div class='btnBlock' id="btnBlock">
+                <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>
+                <a href="{% url 'price_Press' %}">Наши цены <i class="fas fa-ruble-sign"></i></a>
+            </div>
+            <style>
+                .themeImg {
+                    width: 35%;
+                }
+                .themeImg img {
+                    width: 100%;
+        		}
+            </style>
+{% endblock content %}

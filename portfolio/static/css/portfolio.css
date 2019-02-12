@@ -1,0 +1,43 @@
+/*-------------------------------------------------------------*/
+/* ----------------- Пошел блок адаптивности ------------------*/
+/*-------------------------------------------------------------*/
+@media screen and (max-width: 580px) {
+	.Title {
+		width: 100%;
+		font-size: 15px;
+	} .Logo {
+		display: none;
+	}
+	.btnBlock a {
+		font-size: 85%;
+		display:  list-item;
+		list-style-type: none;
+		padding: 10px 5px 10px 5px;
+		margin-bottom: 10px;
+	}
+}
+/*-------------------------------------------------------------*/
+
+.container {
+	z-index: 500;
+	position: relative;
+}
+
+#elastic_grid {
+    width: 100%;
+}
+
+#container {
+	opacity: 0;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	transition-duration: 1s;
+}
+
+
+
+
+.hidden {
+	display: none;
+}

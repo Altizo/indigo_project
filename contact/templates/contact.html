@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% load recaptcha2 %}
+{% load staticfiles %}
+
+{% block title %}Контакты{% endblock title %}
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
+    {% recaptcha_init %}
+{% endblock css_link %}
+
+
+{% block header_title %}Контакты{% endblock header_title %}
+
+{% block content %}
+<div class='infoText' id="infoText">
+    <div class="rowItem">
+        <p>Нас можно найти в соц. сетях:</p>
+        <div>
+            <a href="https://www.instagram.com/indigo_advertising/" target="_blank"><img src="{% static '/img/instagram.png' %}"></a>
+            <a href="https://vk.com/indigoreklama" target="_blank"><img src="{% static '/img/vk.png' %}"></a>
+            <a href="https://goo.gl/etg1Ez" target="_blank"><img src="{% static '/img/g+.png' %}"></a>
+            <a href="https://www.facebook.com/INDIGOadvertising/" target="_blank"><img src="{% static '/img/fb.png' %}"></a>
+        </div>
+    </div>
+    <div class="rowItem">
+        <p>Для удобства мы есть и в мессенджерах:</p>
+        <div>
+            <a href="viber://chat?number=79780200503"><img src="{% static '/img/viber.png' %}"></a>
+            <a href="https://t.me/INDIGO_advertising"><img src="{% static '/img/telegram.png' %}"></a>
+            <a href="https://api.whatsapp.com/send?phone=79780200503"><img src="{% static '/img/whatsapp.png' %}"></a>
+        </div>
+    </div>
+    <div class="rowItem">
+        <p>Можете просто позвонить нам:</p>
+        <div>
+            <div class='mts'><a href="tel:+79780200530">+7 978 02 00 530</a></div>
+            <div class='mts'><a href="tel:+79780200503">+7 978 02 00 503</a></div>
+        </div>
+    </div>
+    <div class="rowItem">
+        <p>Или отправить письмо:</p>
+        <div>
+            <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp<a href="mailto:reklamaindigo@gmail.com">reklamaindigo@gmail.com</a>
+        </div>
+    </div>
+</div>
+<div class='contactForm' id="contactForm">
+    <div class="formBox">
+        <p align="center" >Напишите нам прямо сейчас</p>
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="rowItem">
+                <label for="id_fio">Как к Вам обращаться?</label>
+                {{ form.fio.errors }}
+                {{ form.fio }}
+            </div>
+            <div class="rowItem">
+                <label for="id_sender">Введите свой адрес эл.почты:</label>
+                {{ form.sender.errors }}
+                {{ form.sender }}
+            </div>
+            <div class="rowItem">
+                <label for="id_tel">Укажите свой номер телефона:</label>
+                {{ form.tel.errors }}
+                {{ form.tel }}
+            </div>
+            <div class="rowItemTextArea">
+                <label for="id_message">Напишите нам сообщение:</label>
+                {{ form.message.errors }}
+                {{ form.message }}
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LfNbWIUAAAAADl05dmJa7INfIfE7gb5VYTFIVnT"></div><br>
+            <input type="submit" value="Отправить"/>
+        </form>
+    </div>
+</div>
+<div class='btnBlock' id="btnBlock">
+    <a href="{% url 'home' %}"><i class='fa fa-arrow-left'></i> Вернуться на главную</a>
+</div>
+<style type="text/css">
+    .content{
+        padding-top: 10%;
+    }
+    .infoText {
+        font-size: 20px;
+        width: 50%;
+        min-height: 60%;
+        text-align: center;
+        z-index: 500;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .rowItem{
+        padding: 10px 0px 10px 0px;
+    }
+    .rowItemTextArea input{
+        min-width: 303px;
+        max-width: 303px;
+        min-height: 80px;
+    }
+    .rowItemCopy input{
+        width: 75px;
+    }
+    .rowItem img {
+        height: 50px;
+        padding: 5px 5px 0px 5px;
+        filter: grayscale(100%);
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+        transition-duration: 0.5s;
+        } .rowItem img:hover {
+            filter: grayscale(0%);
+                -webkit-filter: grayscale(0%);
+                -moz-filter: grayscale(0%);
+                -ms-filter: grayscale(0%);
+                -o-filter: grayscale(0%);
+            transition-duration: 0.3s;
+        } .mts a{
+            text-decoration: none;
+            font-size: 25px;
+        } .mts img {
+        height: 25px;
+    }
+    .contactForm {
+        width: 50%;
+        min-height: 60%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .formBox {
+        width: 303px;
+        padding: 10px 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    }
+    input, textarea {
+        width: 303px;
+        min-height: 30px;
+        max-height: 80px;
+        border: none;
+        box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+    } textarea {
+        min-width: 303px;
+        max-width: 303px;
+        min-height: 80px;
+        margin-bottom: 5px;
+    }
+    .contactForm button {
+        width: 100%;
+        color: #fff;
+        padding: 5px 15px 5px 15px;
+        font-size: 20px;
+        border: 2px solid #fff;
+        cursor: pointer;
+        text-decoration: none;
+        background-color: rgba(0,0,0, 0.2);
+    }
+
+    @media screen and (max-height: 768px) and (min-width: 1024px) {
+        .content {
+            margin-top: -50px;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .infoText {
+            width: 100%;
+        }
+        .contactForm {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 580px) {
+        .Title {
+            width: 100%;
+            font-size: 15px;
+        } .Logo {
+            display: none;
+        }
+        .btnBlock a {
+            font-size: 85%;
+            display:  list-item;
+            list-style-type: none;
+            padding: 10px 5px 10px 5px;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+{% endblock content %}

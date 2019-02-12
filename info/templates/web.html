@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ textPacked.title }}{% endblock title %}
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
+{% endblock css_link %}
+
+
+{% block header_title %}{{ textPacked.title }}{% endblock header_title %}
+
+{% block content %}
+            <div class='infoText' id="infoText">
+                {{ textPacked.text|safe }}
+            </div>
+            <div class='themeImg' id="themeImg">
+                <img data-depth="0.2" src="{% static '/img/web/web.png' %}">
+            </div>
+            <div class='btnBlock' id="btnBlock">
+                <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>
+                <a href="{% static 'files/Brif_site.pdf' %}">Скачать бриф  &nbsp;<i class="fas fa-file-code"></i></a>
+            </div>
+            <style>
+                .themeImg {
+                    position: fixed;
+                    right: 10%;
+                    bottom: 0;
+                    height: 100%;
+                    width: 35%;
+                    margin-right: -10%;
+        		}
+        		.themeImg img{
+                    z-index: -1;
+        			bottom: 0;
+                    height: 100%;
+                    margin-left: -50%;
+        		}
+            </style>
+{% endblock content %}

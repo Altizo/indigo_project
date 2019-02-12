@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Портфолио{% endblock title %}
+
+
+{% block css_link %}
+    <link type="text/css" rel="stylesheet" href="{% static '/css/portfolio.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static '/css/elastic_grid.css' %}" />
+{% endblock css_link %}
+
+
+{% block js_link %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static '/js/modernizr.custom.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/classie.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/jquery.elastislide.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/jquery.hoverdir.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/elastic_grid.js' %}"></script>
+{% endblock js_link %}
+
+
+{% block header_title %}Портфолио{% endblock header_title %}
+
+{% block content %}
+<style>
+.elastislide-wrapper nav span {
+	position: absolute;
+	background: #1b1b1b url({% static '/img/nav.png' %}) no-repeat 4px 3px;
+	width: 23px;
+	height: 23px;
+	border-radius: 50%;
+	text-indent: -9000px;
+	cursor: pointer;
+	opacity: 0.8;
+}
+</style>
+
+<div id="elastic_grid" data-depth="0.9"></div>
+
+<script type="text/javascript">
+    $(function(){
+        $("#elastic_grid").elastic_grid({
+            'showAllText' : 'Все проекты',
+            'filterEffect': 'popup', // moveup, scaleup, fallperspective, fly, flip, helix , popup
+            'hoverDirection': true,
+            'hoverDelay': 0,
+            'hoverInverse': false,
+            'expandingSpeed': 500,
+            'expandingHeight': 500,
+            'items' :
+            [
+            {% for project in project_list %}
+                {
+                        'title'         : '{{ project.title }}',
+                        'description'   : '{{ project.description }}',
+                        'thumbnail'     : [{% for preview in project.preview_set.all %} '{{ preview.thumbs.url }}', {% endfor %}],
+                        'large'         : [{% for preview in project.preview_set.all %} '{{ preview.full_size.url }}', {% endfor %}],
+                        'img_title'     : [{% for preview in project.preview_set.all %} '{{ preview.title }}', {% endfor %}],
+                        'button_list'   : [],
+                        'tags'          : [{% for preview in project.preview_set.all %} '{{ preview.tag }}', {% endfor %}]
+                },
+            {% endfor %}
+            ]
+        });
+    });
+</script>
+{% endblock content %}
