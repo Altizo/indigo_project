@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.http import HttpResponse
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail
 
 from .forms import ContactForm
+
 
 def contact(request):
     if request.method == 'POST':
@@ -13,18 +14,21 @@ def contact(request):
             message = form.cleaned_data['message']
             copy = True
 
-            recepients = ['reklamaindigo@gmail.com']
-            #Если пользователь захотел получить копию себе, добавляем его в список получателей
+            recipients = ['reklamaindigo@gmail.com']
+            # Если пользователь захотел получить копию себе, добавляем его в список получателей
             if copy:
-                recepients.append(sender)
+                recipients.append(sender)
             try:
-                send_mail('Письмо с сайта RA-INDIGO.RU', 'Содержимое письма.', settings.EMAIL_HOST_USER, recepients, fail_silently=False)
-            except BadHeaderError:
-                return HttpResponse('Проблема с заголовком')
-            #Переходим на другую страницу, если сообщение отправлено
+                send_mail('Письмо с сайта RA-INDIGO.RU', message, settings.EMAIL_HOST_USER, recipients,
+                          fail_silently=False)
+            except:
+                return HttpResponse('Ошибка при отправвки письма')
+            # Переходим на другую страницу, если сообщение отправлено
             return render(request, 'thanks.html')
+        else:
+            return HttpResponse('Ошибка валидации письма')
     else:
-        #Заполняем форму
+        # Заполняем форму
         form = ContactForm()
-    #Отправляем форму на страницу
+    # Отправляем форму на страницу
     return render(request, 'contact.html', {'form': form})

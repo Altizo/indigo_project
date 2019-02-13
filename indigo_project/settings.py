@@ -20,8 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ne61rav^=8$@&i-(o%-v90*2sh)7i+fuw72)j!gg$yi*vj9fcg'
-RECAPTCHA_PRIVATE_KEY = '6LfNbWIUAAAAAMkLxJIHMaEPKloulV2n3XEh0T7w'
-RECAPTCHA_PUBLIC_KEY = '6LfNbWIUAAAAADl05dmJa7INfIfE7gb5VYTFIVnT'
+RECAPTCHA_PUBLIC_KEY = '6LcTS5EUAAAAAOkX4wSfW2KRBpCFqk1d34XfKpzE'
+RECAPTCHA_PRIVATE_KEY = '6LcTS5EUAAAAACQEdTyhM6W6DGqtbxDEkjphRg1s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'snowpenguin.django.recaptcha2',
     'ckeditor',
+    'captcha',
     'home',
     'info',
     'price',

@@ -1,11 +1,10 @@
 {% extends "base.html" %}
-{% load recaptcha2 %}
 {% load staticfiles %}
+{% include "captcha/includes/js_v3.html" %}
 
 {% block title %}Контакты{% endblock title %}
 {% block css_link %}
     <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
-    {% recaptcha_init %}
 {% endblock css_link %}
 
 
@@ -68,8 +67,8 @@
                 <label for="id_message">Напишите нам сообщение:</label>
                 {{ form.message.errors }}
                 {{ form.message }}
+                {{ form.captcha }}
             </div>
-            <div class="g-recaptcha" data-sitekey="6LfNbWIUAAAAADl05dmJa7INfIfE7gb5VYTFIVnT"></div><br>
             <input type="submit" value="Отправить"/>
         </form>
     </div>
