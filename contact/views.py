@@ -22,7 +22,7 @@ def contact(request):
                 send_mail('Письмо с сайта RA-INDIGO.RU', message, settings.EMAIL_HOST_USER, recipients,
                           fail_silently=False)
             except:
-                return HttpResponse('Ошибка при отправвки письма')
+                return HttpResponse('Ошибка при отправки письма')
             # Переходим на другую страницу, если сообщение отправлено
             return render(request, 'thanks.html')
         else:
