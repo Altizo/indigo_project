@@ -5,7 +5,6 @@ django-ckeditor==5.6.1
 django-cleanup==3.1.0
 django-js-asset==1.1.0
 django-recaptcha==2.0.2
-django-recaptcha2==1.4.1
 idna==2.8
 Pillow==5.4.1
 pytz==2018.9
