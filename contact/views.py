@@ -11,18 +11,21 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             sender = form.cleaned_data['sender']
+            fio = form.cleaned_data['fio']
+            tel = form.cleaned_data['tel']
             message = form.cleaned_data['message']
-            copy = True
+            copy = False
 
             recipients = ['reklamaindigo@gmail.com']
             # Если пользователь захотел получить копию себе, добавляем его в список получателей
             if copy:
                 recipients.append(sender)
             try:
-                send_mail('Письмо с сайта RA-INDIGO.RU', message, settings.EMAIL_HOST_USER, recipients,
+                text = 'Имя: %s \nНомер телефона: %s \nСообщение: \n%s' % (str(fio), str(tel), str(message))
+                send_mail('Письмо с сайта RA-INDIGO.RU', text, settings.EMAIL_HOST_USER, recipients,
                           fail_silently=False)
-            except:
-                return HttpResponse('Ошибка при отправки письма')
+            except ValueError as e:
+                print("Сведения об исключении", e)
             # Переходим на другую страницу, если сообщение отправлено
             return render(request, 'thanks.html')
         else:
