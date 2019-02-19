@@ -3,6 +3,10 @@
 
 {% block title %}{{ textPacked.title }}{% endblock title %}
 {% block css_link %}
+    <meta name="description" content="Рекламное агентство INDIGO. Разработка дизайна продукции, проектирование рекламы и многое другое..."/>
+    <meta name="keywords" content="дизайн, стиль, разработка, сайты, видео" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
 {% endblock css_link %}
 
@@ -14,9 +18,9 @@
                 {{ textPacked.text|safe }}
             </div>
             <div class='wrapper' id="themeImg">
-                <img class='ps' data-depth="0.3" src="{% static '/img/design/PS.png' %}">
-                <img class='ai' data-depth="0.6" src="{% static '/img/design/AI.png' %}">
-                <img class='cd' data-depth="0.9" src="{% static '/img/design/CD.png' %}">
+                <img class='ps' alt='ps' data-depth="0.3" src="{% static '/img/design/PS.png' %}">
+                <img class='ai' alt='ai' data-depth="0.6" src="{% static '/img/design/AI.png' %}">
+                <img class='cd' alt='cd' data-depth="0.9" src="{% static '/img/design/CD.png' %}">
             </div>
             <div class='btnBlock' id="btnBlock">
                 <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>

@@ -3,6 +3,10 @@
 
 {% block title %}{{ textPacked.title }}{% endblock title %}
 {% block css_link %}
+    <meta name="description" content="Рекламное агентство INDIGO. Мы занимаемся брендированием огромного количества продукции, сможем предложить нестандартные решения"/>
+    <meta name="keywords" content="брендинг, брендирование, имидж, сувениры, реклама" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
 {% endblock css_link %}
 
@@ -14,7 +18,7 @@
                 {{ textPacked.text|safe }}
             </div>
             <div class='themeImg' id="themeImg">
-                <img data-depth="0.9" src="{% static '/img/brending/m_hoody.png' %}">
+                <img alt="hoody" data-depth="0.9" src="{% static '/img/brending/m_hoody.png' %}">
             </div>
             <div class='btnBlock' id="btnBlock">
                 <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>

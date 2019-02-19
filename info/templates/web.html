@@ -3,6 +3,10 @@
 
 {% block title %}{{ textPacked.title }}{% endblock title %}
 {% block css_link %}
+    <meta name="description" content="Рекламное агентство INDIGO. Разработка нестандартных сайтов любой сложности и с любым дизайном"/>
+    <meta name="keywords" content="сайт, разработка, seo, интернет, контент" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
 {% endblock css_link %}
 
@@ -14,7 +18,7 @@
                 {{ textPacked.text|safe }}
             </div>
             <div class='themeImg' id="themeImg">
-                <img data-depth="0.2" src="{% static '/img/web/web.png' %}">
+                <img alt="web" data-depth="0.2" src="{% static '/img/web/web.png' %}">
             </div>
             <div class='btnBlock' id="btnBlock">
                 <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>

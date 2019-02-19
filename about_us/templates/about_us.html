@@ -3,6 +3,9 @@
 
 {% block title %}Немного о нас{% endblock title %}
 {% block css_link %}
+    <meta name="description" content="Немного о нас, о рекламном агентстве INDIGO"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
 {% endblock css_link %}
 
@@ -26,23 +29,23 @@
     </div> -->
 </div>
 <div class='themeImg' id="themeImg">
-    <img data-depth="0.9" class='css' src="{% static '/img/css.png' %}">
-    <img data-depth="0.7" class='java' src="{% static '/img/java.png' %}">
-    <img data-depth="1.0" class='dividers' src="{% static '/img/dividers.png' %}">
-    <img data-depth="0.8" class='php' src="{% static '/img/php.png' %}">
-    <img data-depth="0.6" class='t-shirt' src="{% static '/img/t-shirt.png' %}">
-    <img data-depth="0.3" class='sass' src="{% static '/img/sass.png' %}">
-    <img data-depth="0.5" class='pencil' src="{% static '/img/pencil.png' %}">
-    <img data-depth="1.3" class='python' src="{% static '/img/python.png' %}">
-    <img data-depth="0.8" class='printer' src="{% static '/img/printer.png' %}">
-    <img data-depth="0.3" class='pen' src="{% static '/img/pen.png' %}">
-    <img data-depth="0.5" class='html' src="{% static '/img/html.png' %}">
-    <img data-depth="0.4" class='less' src="{% static '/img/less.png' %}">
-    <img data-depth="0.7" class='billboard' src="{% static '/img/billboard.png' %}">
-    <img data-depth="0.3" class='rules' src="{% static '/img/rules.png' %}">
+    <img data-depth="0.9" class='css' alt='css' src="{% static '/img/css.png' %}">
+    <img data-depth="0.7" class='java' alt='java' src="{% static '/img/java.png' %}">
+    <img data-depth="1.0" class='dividers' alt='dividers' src="{% static '/img/dividers.png' %}">
+    <img data-depth="0.8" class='php' alt='php' src="{% static '/img/php.png' %}">
+    <img data-depth="0.6" class='t-shirt' alt='t-shirt' src="{% static '/img/t-shirt.png' %}">
+    <img data-depth="0.3" class='sass' alt='sass' src="{% static '/img/sass.png' %}">
+    <img data-depth="0.5" class='pencil' alt='pencil' src="{% static '/img/pencil.png' %}">
+    <img data-depth="1.3" class='python' alt='python' src="{% static '/img/python.png' %}">
+    <img data-depth="0.8" class='printer' alt='printer' src="{% static '/img/printer.png' %}">
+    <img data-depth="0.3" class='pen' alt='pen' src="{% static '/img/pen.png' %}">
+    <img data-depth="0.5" class='html' alt='html' src="{% static '/img/html.png' %}">
+    <img data-depth="0.4" class='less' alt='less' src="{% static '/img/less.png' %}">
+    <img data-depth="0.7" class='billboard' alt='billboard' src="{% static '/img/billboard.png' %}">
+    <img data-depth="0.3" class='rules' alt='rules' src="{% static '/img/rules.png' %}">
 </div>
 <div>
-    <img data-depth="1.0" class='themeImg2 costume' src="{% static '/img/costume.png' %}">
+    <img data-depth="1.0" class='themeImg2 costume' alt='costume' src="{% static '/img/costume.png' %}">
 </div>
 <div class='btnBlock' id="btnBlock">
     <a onclick='javascript:history.back(); return false;'><i class='fa fa-arrow-left'></i> Назад</a>
@@ -65,7 +68,6 @@
         width: 43%;
     }
     .bottom {
-        position: table;
         vertical-align: bottom;
         margin-bottom: -30%;
     }

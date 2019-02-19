@@ -3,6 +3,9 @@
 
 {% block title %}Наши цены{% endblock title %}
 {% block css_link %}
+    <meta name="description" content="Расценки на услуги разработки дизайна полиграфичекской продукции и любого контента рекламного агентства INDIGO"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link type="text/css" rel="stylesheet" href="{% static '/css/price.css' %}" />
 {% endblock css_link %}
 
@@ -20,11 +23,11 @@
                 <td>Цена</td>
             </tr>
         </thead>
-        <tbody>
+        <tbody itemtype="http://schema.org/Product">
             {% for position in price_Design %}
                 <tr>
-                    <td class='nameString'>{{ position.name }}</td>
-                    <td>от {{ position.cost }} <i class="fas fa-ruble-sign"/></td>
+                    <td class='nameString' itemprop="{{ position.name }}">{{ position.name }}</td>
+                    <td itemprop="{{ position.cost }}">от {{ position.cost }} <i class="fas fa-ruble-sign"></i></td>
                 </tr>
             {% endfor %}
         </tbody>

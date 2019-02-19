@@ -3,6 +3,9 @@
 
 {% block title %}Наши цены{% endblock title %}
 {% block css_link %}
+    <meta name="description" content="Расценки на услуги печати рекламного агентства INDIGO"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link type="text/css" rel="stylesheet" href="{% static '/css/price.css' %}" />
 {% endblock css_link %}
 
@@ -25,25 +28,25 @@
                 <td>5000</td>
             </tr>
         </thead>
-        <tbody>
+        <tbody itemscope itemtype="http://schema.org/Product">
             {% for position in price_OffsetPress %}
                 <tr>
-                    <td class='nameString'>{{ position.name }}</td>
-                    <td>
+                    <td class='nameString' itemprop="{{ position.name }}">{{ position.name }}</td>
+                    <td itemprop="{{ position.price1000|safe }}">
                         {% if position.price1000 %}
                             {{ position.price1000|safe }} <i class="fas fa-ruble-sign"></i>
                         {% else %}
                             <i class="fas fa-square"></i>
                         {% endif %}
                     </td>
-                    <td>
+                    <td itemprop="{{ position.price2000|safe }}">
                         {% if position.price2000 %}
                             {{ position.price2000|safe }} <i class="fas fa-ruble-sign"></i>
                         {% else %}
                             <i class="fas fa-square"></i>
                         {% endif %}
                     </td>
-                    <td>
+                    <td itemprop="{{ position.price5000|safe }}">
                         {% if position.price5000 %}
                             {{ position.price5000|safe }} <i class="fas fa-ruble-sign"></i>
                         {% else %}
@@ -62,12 +65,15 @@
                 <td>Цена</td>
             </tr>
         </thead>
-        <tbody>
+        <tbody itemtype="http://schema.org/Product">
             {% regroup price_LargeFormatPress by category as category_list %}
             {% for category in category_list %}
                 <tr class="title"><th colspan="2">{{ category.grouper }}</th></tr>
                 {% for position in category.list %}
-                    <tr><td class="nameString">{{ position.name|safe }}</td><td>{{ position.cost }} <i class="fas fa-ruble-sign"></i></td></tr>
+                    <tr>
+                        <td class="nameString" itemprop="{{ position.name|safe }}">{{ position.name|safe }}</td>
+                        <td itemprop="{{ position.cost }}">{{ position.cost }} <i class="fas fa-ruble-sign"></i></td>
+                    </tr>
                 {% endfor %}
             {% endfor %}
         </tbody>

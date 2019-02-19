@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html>
+<html lang="ru">
 <head>
 	{% include "seo.html" %}
 	<meta charset="UTF-8" />
@@ -44,7 +44,7 @@
 <body>
 	<div class='header' id='header'>
 		<a href="{% url 'home' %}" class='Logo'>
-            <img src="{% static '/img/logo.svg' %}">
+            <img alt='logo' src="{% static '/img/logo.svg' %}">
 		</a>
 		<div class='Title'>
 			<h1>{% block header_title %}Базовый заголовок{% endblock header_title %}</h1>

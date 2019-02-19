@@ -4,6 +4,9 @@
 
 {% block title %}Контакты{% endblock title %}
 {% block css_link %}
+    <meta name="description" content="Вы можете связаться с нами позвонив, отправив письмо или написав нам в мессенджерах или в социальных сетях. Мы ответим Вам в ближайшее время и ответим на все Ваши вопросы"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link type="text/css" rel="stylesheet" href="{% static '/css/info.css' %}" />
 {% endblock css_link %}
 
@@ -11,35 +14,35 @@
 {% block header_title %}Контакты{% endblock header_title %}
 
 {% block content %}
-<div class='infoText' id="infoText">
+<div class='infoText' id="infoText" itemtype="http://schema.org/Organization">
     <div class="rowItem">
         <p>Нас можно найти в соц. сетях:</p>
         <div>
-            <a href="https://www.instagram.com/indigo_advertising/" target="_blank"><img src="{% static '/img/instagram.png' %}"></a>
-            <a href="https://vk.com/indigoreklama" target="_blank"><img src="{% static '/img/vk.png' %}"></a>
-            <a href="https://goo.gl/etg1Ez" target="_blank"><img src="{% static '/img/g+.png' %}"></a>
-            <a href="https://www.facebook.com/INDIGOadvertising/" target="_blank"><img src="{% static '/img/fb.png' %}"></a>
+            <a href="https://www.instagram.com/indigo_advertising/" target="_blank"><img alt='instagram' src="{% static '/img/instagram.png' %}"></a>
+            <a href="https://vk.com/indigoreklama" target="_blank"><img alt='vk' src="{% static '/img/vk.png' %}"></a>
+            <a href="https://goo.gl/etg1Ez" target="_blank"><img alt='google+' src="{% static '/img/g+.png' %}"></a>
+            <a href="https://www.facebook.com/INDIGOadvertising/" target="_blank"><img alt='facebook' src="{% static '/img/fb.png' %}"></a>
         </div>
     </div>
     <div class="rowItem">
         <p>Для удобства мы есть и в мессенджерах:</p>
         <div>
-            <a href="viber://chat?number=79780200503"><img src="{% static '/img/viber.png' %}"></a>
-            <a href="https://t.me/INDIGO_advertising"><img src="{% static '/img/telegram.png' %}"></a>
-            <a href="https://api.whatsapp.com/send?phone=79780200503"><img src="{% static '/img/whatsapp.png' %}"></a>
+            <a href="viber://chat?number=79780200503"><img alt='viber' src="{% static '/img/viber.png' %}"></a>
+            <a href="https://t.me/INDIGO_advertising"><img alt='telegram' src="{% static '/img/telegram.png' %}"></a>
+            <a href="https://api.whatsapp.com/send?phone=79780200503"><img alt='whatsapp' src="{% static '/img/whatsapp.png' %}"></a>
         </div>
     </div>
     <div class="rowItem">
         <p>Можете просто позвонить нам:</p>
         <div>
-            <div class='mts'><a href="tel:+79780200530">+7 978 02 00 530</a></div>
-            <div class='mts'><a href="tel:+79780200503">+7 978 02 00 503</a></div>
+            <div class='mts'><a itemprop="telephone" href="tel:+79780200530">+7 978 02 00 530</a></div>
+            <div class='mts'><a itemprop="telephone" href="tel:+79780200503">+7 978 02 00 503</a></div>
         </div>
     </div>
     <div class="rowItem">
         <p>Или отправить письмо:</p>
         <div>
-            <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp<a href="mailto:reklamaindigo@gmail.com">reklamaindigo@gmail.com</a>
+            <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp<a itemprop="email" href="mailto:reklamaindigo@gmail.com">reklamaindigo@gmail.com</a>
         </div>
     </div>
 </div>
