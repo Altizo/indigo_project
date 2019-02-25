@@ -226,7 +226,7 @@ $(function() {
         }
 
         //initial filter nav
-        container.html('<div class="wagwep-container"><nav id="porfolio-nav" class="clearfix"><ul id="portfolio-filter" class="nav nav-tabs clearfix"></ul></nav></div>');
+        // container.html('<div class="wagwep-container"><nav id="porfolio-nav" class="clearfix"><ul id="portfolio-filter" class="nav nav-tabs clearfix"></ul></nav></div>');
 
         //initial items
         var gridContent = "";
@@ -302,7 +302,7 @@ $(function() {
 /**************************************************************************
 * Tags to filter
 ***************************************************************************/
-    var porfolio_filter = container.find('#portfolio-filter');
+/*    var porfolio_filter = container.find('#portfolio-filter');
     var items = ulObject.find('li'),
     itemsByTags = {};
     numOfTag = 0;
@@ -337,7 +337,7 @@ $(function() {
 
     });
 
-/*    if(numOfTag > 1){
+/!*    if(numOfTag > 1){
         // Creating the "Everything" option in the menu:
         createList(config.showAllText);
 
@@ -347,7 +347,7 @@ $(function() {
         });
     }else{
         porfolio_filter.remove();
-    }*/
+    }*!/
     porfolio_filter.remove();
 
     porfolio_filter.find('a').bind('click',function(e){
@@ -413,7 +413,7 @@ $(function() {
 
             li.appendTo(porfolio_filter);
         }
-    }
+    }*/
 /**************************************************************************
 * EXPANDING
 ***************************************************************************/
