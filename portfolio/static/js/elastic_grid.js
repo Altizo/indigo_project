@@ -337,7 +337,7 @@ $(function() {
 
     });
 
-    if(numOfTag > 1){
+/*    if(numOfTag > 1){
         // Creating the "Everything" option in the menu:
         createList(config.showAllText);
 
@@ -347,8 +347,8 @@ $(function() {
         });
     }else{
         porfolio_filter.remove();
-    }
-
+    }*/
+    porfolio_filter.remove();
 
     porfolio_filter.find('a').bind('click',function(e){
         //close expanding preview
