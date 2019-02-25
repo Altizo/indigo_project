@@ -239,13 +239,13 @@ $(function() {
                 liObject = $('<li></li>');
 
                 //get tags
-                tags = item.tags;
+ /*               tags = item.tags;
                 strTag = "";
                 for (var i = tags.length - 1; i >= 0; i--) {
                     strTag += ","+tags[i];
                 };
                 strTag = strTag.substring(1);
-                liObject.attr('data-tags', strTag);
+                liObject.attr('data-tags', strTag);*/
 
                 //initial a object
                 aObject = $('<a></a>');
