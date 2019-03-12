@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'about_us',
     'portfolio',
     'contact',
+    'coming_soon',
     'django_cleanup.apps.CleanupConfig',
 ]
 
@@ -148,3 +149,8 @@ EMAIL_HOST_USER = 'reklamaindigo@gmail.com'
 
 EMAIL_HOST_PASSWORD = 'BLuHirgOodFenV7'
 EMAIL_USE_TLS = True
+
+try:
+    from .local_settings import *
+except ImportError:
+    from .prod_settings import *

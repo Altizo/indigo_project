@@ -29,6 +29,7 @@ if settings.DEBUG:
         path('portfolio/', include('portfolio.urls')),
         path('price/', include('price.urls')),
         path('contact/', include('contact.urls')),
+        path('*', include('coming_soon.urls')),
         path('admin/', admin.site.urls)
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 else:
@@ -39,6 +40,7 @@ else:
         path('portfolio/', include('portfolio.urls')),
         path('price/', include('price.urls')),
         path('contact/', include('contact.urls')),
+        path('*', include('coming_soon.urls')),
         path('admin/', admin.site.urls)
     ]
 
